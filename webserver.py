@@ -1,6 +1,6 @@
 from flask import Flask
 import threading
-import app  # your telegram bot file
+from app import app as telegram_app  # <-- Import bot application instance
 
 web_app = Flask(__name__)
 
@@ -11,7 +11,7 @@ def home():
 def run_telegram_bot():
     print(">>> Starting Telegram bot polling!")
     try:
-        app.run_polling()
+        telegram_app.run_polling()
     except Exception as e:
         print("Telegram bot crashed with exception:", e)
 
