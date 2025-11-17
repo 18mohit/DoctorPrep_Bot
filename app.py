@@ -53,5 +53,4 @@ app.add_handler(CommandHandler("link", link))
 app.add_handler(CommandHandler("contact", contact))
 
 if __name__ == "__main__":
-    # app.run_polling().
-    pass  # IGNORE for now
+    app.run_polling()

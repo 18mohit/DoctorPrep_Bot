@@ -1,6 +1,6 @@
 from flask import Flask
 import threading
-from app import app as telegram_app  # <-- Import bot application instance
+from app import app as telegram_app
 
 web_app = Flask(__name__)
 
