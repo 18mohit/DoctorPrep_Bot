@@ -9,6 +9,7 @@ def home():
     return 'Telegram bot is running!'
 
 def run_telegram_bot():
+    print(">>> Starting Telegram bot polling!")
     try:
         app.run_polling()
     except Exception as e:
