@@ -9,7 +9,10 @@ def home():
     return 'Telegram bot is running!'
 
 def run_telegram_bot():
-    app.run_polling()  # make sure your telegram bot starts with this function
+    try:
+        app.run_polling()
+    except Exception as e:
+        print("Telegram bot crashed with exception:", e)
 
 if __name__ == "__main__":
     threading.Thread(target=run_telegram_bot).start()
