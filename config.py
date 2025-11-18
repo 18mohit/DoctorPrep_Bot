@@ -9,10 +9,13 @@
 #     ("6 month pack", 500),
 #     ("1 year pack", 750)
 # ]
+from dotenv import load_dotenv
 import os
 import ast
 
-# Print at startup for debugging: REMOVE or comment out after confirming!
+# Load .env file variables into environment
+load_dotenv()
+
 print(">>> Loading config.py - environment variables:")
 
 TOKEN = os.getenv("TOKEN")
