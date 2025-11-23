@@ -9,15 +9,18 @@
 #     ("6 month pack", 500),
 #     ("1 year pack", 750)
 # ]
-from dotenv import load_dotenv
+
 import os
 import ast
 
-# Load .env file variables into environment
+# Load .env variables for local development
+# (Does nothing on Render/production if they aren't present, so it's safe)
+from dotenv import load_dotenv
 load_dotenv()
 
 print(">>> Loading config.py - environment variables:")
 
+# Required variables
 TOKEN = os.getenv("TOKEN")
 print("TOKEN present?", "yes" if TOKEN else "MISSING")
 
@@ -30,8 +33,9 @@ print("GROUP_INVITE_LINK:", GROUP_INVITE_LINK)
 MONGO_URI = os.getenv("MONGO_URI")
 print("MONGO_URI present?", "yes" if MONGO_URI else "MISSING")
 
-USERS_FILE = "users.json"
+USERS_FILE = "users.json"  # Keep as constant unless you want to change filename via ENV
 
+# Optional: Payment options can be set as an ENV string (Python literal), or fallback to default
 PAYMENT_OPTIONS_RAW = os.getenv("PAYMENT_OPTIONS")
 if PAYMENT_OPTIONS_RAW:
     try:
