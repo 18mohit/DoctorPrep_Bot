@@ -26,10 +26,10 @@ conv_handler = ConversationHandler(
 )
 app.add_handler(conv_handler)
 
-def error_handler(update, context):
+async def error_handler(update, context):
     print(f"Update {update} caused error {context.error}")
 
-app.add_error_handler(error_handler)  # register to the same app!
+app.add_error_handler(error_handler)
 
 # Admin handlers
 app.add_handler(CommandHandler("approveid", approve_id))
