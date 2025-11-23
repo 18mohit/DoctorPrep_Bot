@@ -24,7 +24,7 @@ print(">>> Loading config.py - environment variables:")
 TOKEN = os.getenv("TOKEN")
 print("TOKEN present?", "yes" if TOKEN else "MISSING")
 
-ADMIN_ID = os.getenv("ADMIN_ID")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 print("ADMIN_ID:", ADMIN_ID)
 
 GROUP_INVITE_LINK = os.getenv("GROUP_INVITE_LINK")
